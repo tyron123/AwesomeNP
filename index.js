@@ -31,6 +31,22 @@ app.use(mountPath, api);
 app.get('/', function(req, res) {
   res.status(200).send('I dream of being a web site. 2.0');
 });
+var text_to_be_inserted = "sample";
+//Text box area start
+function onCLickButton(){
+    document.getElementById("textbox_1").value='';
+    document.getElementById("textbox_2").value='';
+    if(document.getElementById("textbox_1").focused){
+        document.getElementById("textbox_1").value=text_to_be_inserted;
+    }
+    else if(document.getElementById("textbox_2").focused){
+        document.getElementById("textbox_2").value=text_to_be_inserted;
+    }
+    else{
+        // do nothing
+    }
+}
+//Text box are close
 
 var port = process.env.PORT || 1337;
 app.listen(port, function() {
